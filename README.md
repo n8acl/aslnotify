@@ -138,6 +138,11 @@ Example:
 ALLSTAR ALERT: Node 1999 connected to 12345
 ```
 ---
+## Credits
+
+The idea for the Pushover Notifiations came from Michael Clemens, DL6MHC. I saw it in his [pyBMNotify Script](https://git.qrz.is/clemens/pyBMNotify) and used it here.
+
+---
 
 ## Contact
 If you have questions, please feel free to reach out to me. You can reach me in one of the following ways:
