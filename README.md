@@ -148,7 +148,14 @@ The idea for the Pushover Notifiations came from Michael Clemens, DL6MHC. I saw 
 If you have questions, please feel free to reach out to me. You can reach me in one of the following ways:
 
 - Twitter: @n8acl
+- Discord: Ravendos#7364
 - Mastodon: @n8acl@mastodon.radio
 - E-mail: n8acl@qsl.net
 
 If you reach out to me, please include what error you are getting and what you were doing. I may also ask you to send me certain files to look at. 
+
+---
+
+## Change Log
+
+03/29/2022 -  Updated Contact Information in README.md
