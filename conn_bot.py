@@ -13,8 +13,8 @@ status = "ALLSTAR ALERT: "
 my_node = sys.argv[2]
 their_node = sys.argv[3]
 conn_status = sys.argv[1]
-node_db = "/etc/asterisk/astdb.txt"
-db_deliminater = "|"
+node_db = config.node_db
+node_db_deliminater = config.node_db_deliminater
 node_info = ""
 
 def send(status):
@@ -40,7 +40,7 @@ def send(status):
 # Open Node Database
 csvfile = open(node_db, "r", encoding="Latin-1")
 csvfile.seek
-reader = csv.reader(csvfile, dialect='excel', delimiter=db_deliminater, quotechar="'")
+reader = csv.reader(csvfile, dialect='excel', delimiter=node_db_deliminater, quotechar="'")
 
 # Search cvs for the node string
 
@@ -71,9 +71,9 @@ else:
     if (their_node not in config.my_nodes_list) and (their_node not in config.private_nodes_list):
         status = status + "Node " + str(their_node) + str(node_info)
         if int(conn_status) == 1:
-            status = status + " connected to " + str(my_node) + " (Technology First Hub)."
+            status = status + " connected to " + str(my_node) + "."
         else:
-            status = status + " disconnected from " + str(my_node) + " (Technology First Hub)."
+            status = status + " disconnected from " + str(my_node) + "."
 
         # send message
         send(status)
