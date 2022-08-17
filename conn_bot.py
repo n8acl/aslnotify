@@ -37,7 +37,7 @@ def send(status):
             }), { "Content-type": "application/x-www-form-urlencoded" })
         conn.getresponse()
 
-def node_info(cfg.node_db):
+def node_info(node_db):
     # Build Node Information
     # Open Node Database
     csvfile = open(node_db, "r", encoding="Latin-1")
@@ -67,7 +67,7 @@ if (their_node in cfg.blocked_nodes_list) and (my_node not in cfg.other_nodes_li
     os.system(cmd)
 
     # Notify me that it was auto disconnected
-    status = status + "Blocked node " + str(their_node) + " " + node_info(node_db) + " was auto disconnected from " + str(my_node) + "."
+    status = status + "Blocked node " + str(their_node) + " " + node_info(cfg.node_db) + " was auto disconnected from " + str(my_node) + "."
 
     # send message
     send(status)
