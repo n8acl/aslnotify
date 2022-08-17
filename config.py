@@ -6,6 +6,10 @@ private_nodes_list = ["1999","1998"] # This is a list of the private nodes you c
 other_nodes_list = ["67890", "67891"] # This is a list of other nodes you host, like a clubs node, on the same server
 blocked_nodes_list = ["99999"] # These are nodes that you want to block from accessing any of your nodes.
 
+# Node Databae Information
+node_db = "/etc/asterisk/astdb.txt" # Location of the Allmon or Supermon astdb.txt file.
+node_db_deliminater = "|" # Deliminiter of above file.
+
 # Telegram Configuration
 publish_telegram = False # Enable/Disable Telegram Bot Notification
 
