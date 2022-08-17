@@ -63,6 +63,10 @@ You will need to open the config.py file in your favorite text/Python editor and
   - This is a list of other nodes you host, like a club's node or a friends node, on the same server as your personal nodes.
 - blocked_nodes_list = ["99999"]
   - These are nodes that you want to block from accessing any of the nodes on your Allstar system.
+- echolink_node = 1999
+  - This is the node number of your Echolink Node, if you are running Echolink.
+- node_db = "/etc/asterisk/astdb.txt" 
+  - This is the location of the astdb.txt database on your Allstar System. This could be in your Allmon2 directory or in your Asterisk Directory
 
 - publish_telegram = False
   - Enable/Disable Telegram Bot Notification
@@ -78,8 +82,8 @@ You will need to open the config.py file in your favorite text/Python editor and
   - Enable/Disable Discord Notifiations
     - Set True to Enable, False to Disable
   
-- discord_wh_url = 'DISCORD WEBHOOK URL HERE'
-  - Your Discord Webhook for the channel you are connecting to.
+- discord_wh_url = ['DISCORD WEBHOOK URL1 HERE','DISCORD WEBHOOK URL2 HERE']
+  - Your Discord Webhook(s) for the channel(s) you are connecting to. Thjis can be multiple webhooks for multiple channels
 
 - publish_pushover = False # Enable or disable notifications via Pushover
   - Enable/Disable Pushover Notifiations
@@ -142,6 +146,8 @@ ALLSTAR ALERT: Node 1999 connected to 12345
 
 The idea for the Pushover Notifiations came from Michael Clemens, DL6MHC. I saw it in his [pyBMNotify Script](https://git.qrz.is/clemens/pyBMNotify) and used it here.
 
+Addtion of searching of Asterisk Database file for node information added by Scott, W8UFO
+
 ---
 
 ## Contact
@@ -157,5 +163,9 @@ If you reach out to me, please include what error you are getting and what you w
 ---
 
 ## Change Log
+
+08/17/2022
+* Addition of asterisk database search - Scott, W8UFO (PR#1)
+* Cleanup of code and merging of other code from development. - Jeff, N8ACL
 
 03/29/2022 -  Updated Contact Information in README.md
