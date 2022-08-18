@@ -57,7 +57,6 @@ def node_info(node_db):
 
     return node_info
 
-
 # Check if their node is a blocked node and if it is disconnect it automatically and send a message that was disconnected
 # Otherwise, send it through the notificaton control code.
 
