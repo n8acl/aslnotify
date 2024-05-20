@@ -163,6 +163,9 @@ If you reach out to me, please include what error you are getting and what you w
 
 ## Change Log
 
+05/20/2024
+* Fix to link variable node_db correctly from the config file.
+
 08/17/2022
 * Addition of asterisk database search - Scott, W8UFO (PR#1)
 * Cleanup of code and merging of other code from development. - Jeff, N8ACL

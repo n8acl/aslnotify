@@ -10,7 +10,7 @@ from discord_webhook import DiscordWebhook
 
 # Define Variables
 
-status = "ALLSTAR ALERT: "
+status = ""
 my_node = sys.argv[2]
 their_node = sys.argv[3]
 conn_status = sys.argv[1]
@@ -75,7 +75,7 @@ else:
     now = datetime.now()
     #build connect/disconnect message
     if (their_node not in cfg.my_nodes_list) and (their_node not in cfg.private_nodes_list):
-        status = status + "Node " + str(their_node) + " " + node_info(node_db)
+        status = status + "Node " + str(their_node) + " " + node_info(cfg.node_db)
         if int(conn_status) == 1:
             status = status + " connected to "
         else:
