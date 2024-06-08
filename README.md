@@ -139,7 +139,7 @@ So if their node is 1999 and your node is 12345, you will get a notification sim
 
 Example:
 ```bash
-ALLSTAR ALERT: Node 1999 connected to 12345
+Node 1999 connected to 12345
 ```
 ---
 ## Credits
@@ -147,6 +147,8 @@ ALLSTAR ALERT: Node 1999 connected to 12345
 The idea for the Pushover Notifiations came from Michael Clemens, DL6MHC. I saw it in his [pyBMNotify Script](https://git.qrz.is/clemens/pyBMNotify) and used it here.
 
 Addtion of searching of Asterisk Database file for node information added by Scott, W8UFO
+
+Update to Telegram code moving from cURL to http.client and json payload added by Alex, GM5ALX
 
 ---
 
@@ -162,6 +164,9 @@ If you reach out to me, please include what error you are getting and what you w
 ---
 
 ## Change Log
+
+06/08/2024
+* Update to Telegram code moving from cURL to http.client and json payload - Alex, GM5ALX (PR #6)
 
 05/20/2024
 * Fix to link variable node_db correctly from the config file.
