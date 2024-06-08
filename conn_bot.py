@@ -19,13 +19,23 @@ node_info = ""
 
 def send(status):
     if cfg.publish_telegram: # Send telegram message
-        cmd = 'curl -s "https://api.telegram.org/bot' + cfg.telegram_keys["apikey"] + "/sendmessage?chat_id=" + cfg.telegram_keys["chat_id"] + "&text=" + status +'"'
-        os.system(cmd)
+        conn = http.client.HTTPSConnection("api.telegram.org")
+        url = f"/bot{cfg.telegram_keys['apikey']}/sendMessage"
+        payload = {
+            "chat_id": cfg.telegram_keys["chat_id"],
+            "text": status
+        }
+        payload_json = json.dumps(payload)
+        headers = {
+            "Content-Type": "application/json"
+        }
+        conn.request("POST", url, body=payload_json, headers=headers)
+        conn.getresponse()
 
     if cfg.publish_discord: # Send Status to Discord
         for wh in cfg.discord_wh_url:
             webhook = DiscordWebhook(url=wh, content=status)
-            response = webhook.execute() 
+            response = webhook.execute()
 
     if cfg.publish_pushover: # Send Status to Pushover
         conn = http.client.HTTPSConnection("api.pushover.net:443")
@@ -80,12 +90,12 @@ else:
             status = status + " connected to "
         else:
             status = status + " disconnected from "
-        
+
         if my_node == cfg.echolink_node:
             status = status + "Echolink (" + str(my_node) + ")"
         else:
             status = status + str(my_node)
-        
+
         # send message
         status = status + " at " + now.strftime("%H:%M:%S")
         send(status)
