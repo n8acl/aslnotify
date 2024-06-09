@@ -24,6 +24,7 @@ def send(status):
         token = client.login_with_password(username=cfg.matrix_user, password=cfg.matrix_password)
         room = client.join_room(cfg.matrix_room)
         room.send_text(status)
+
     if cfg.publish_telegram: # Send telegram message
         conn = http.client.HTTPSConnection("api.telegram.org")
         url = f"/bot{cfg.telegram_keys['apikey']}/sendMessage"
