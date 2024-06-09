@@ -8,7 +8,7 @@ Notification/Access Control script for Allstarlink Nodes
 
 ASL has a built in ability to run a script on the connection or disconnection of one node to another node. Many node owners use this functionality as a notification method to know when someone connects/disconnects to thier system. This is done via either email or text message, depending on how the owner has the script setup.
 
-This script will send a notification to Telegram, Discord or via Pushover when a node connects or disconnects from your Allstarlink System. It will also allow you to block any nodes you would like to keep them from being able to connect to any of your nodes on your system. This is an easier blacklist then what is built into Allstarlink itself.
+This script will send a notification to Telegram, Discord, Matrix or via Pushover when a node connects or disconnects from your Allstarlink System. It will also allow you to block any nodes you would like to keep them from being able to connect to any of your nodes on your system. This is an easier blacklist then what is built into Allstarlink itself.
 
 Since ASL only runs on Linux, the instructions here are based on that.
 
