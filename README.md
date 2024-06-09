@@ -35,6 +35,10 @@ Next you will need to install the discord-webhook python library if it's not alr
 pip3 install discord-webhook --upgrade
 ```
 
+Next you will need to install the matrix-client python library if it's not already. This is for sending the notification to Matrix:
+```bash
+pip3 install matrix-client --upgrade
+```
 ---
 
 ### API Keys Needed
@@ -46,6 +50,8 @@ If you are going to use Telegram for your notifications, you will need to get AP
 If you are going to use Discord, you will need to setup a channel and then setup a webhook for that channel and then copy that webhook URL into the config file in the correct place.
 
 If you are going to use Pushover, you will need to get an API token and have your User Key available from your account.
+
+If you are going to use Matrix, you will need a Matrix user on any server.
 
 ---
 
@@ -93,6 +99,20 @@ You will need to open the config.py file in your favorite text/Python editor and
   - Your Pushover API token
 - pushover_user = "abcdefghijklm" 
   - Your Pushover user key
+
+- publish_matrix = False # Enable or disable notifications via Matrix
+  - Enable/Disable Matrix Notifiations
+    - Set True to Enable, False to Disable
+
+- matrix_user = "botuser"
+  - The user name of your Matrix user
+- matrix_password = "1234567890"
+  - The password of your Matrix user
+- matrix_server = "https://matrix.example.com"
+  - The server URL of the Matrix server
+- matrix_room = "theroom:matrix.example.com"
+  - The Matrix room your bot should join
+
 
 When editing the config file and copying in your keys, make sure to leave the single and double quotes around tokens, otherwise the program will not know how to handle the token keys.
 
@@ -144,11 +164,13 @@ Node 1999 connected to 12345
 ---
 ## Credits
 
-The idea for the Pushover Notifiations came from Michael Clemens, DL6MHC. I saw it in his [pyBMNotify Script](https://git.qrz.is/clemens/pyBMNotify) and used it here.
+The idea for the Pushover Notifiations came from Michael Clemens, DK1MI. I saw it in his [pyBMNotify Script](https://git.dk1mi.radio/mclemens/pyBMNotify) and used it here.
 
 Addtion of searching of Asterisk Database file for node information added by Scott, W8UFO
 
 Update to Telegram code moving from cURL to http.client and json payload added by Alex, GM5ALX
+
+Addition of Matrix notifications my Michael Clemens, DK1MI
 
 ---
 

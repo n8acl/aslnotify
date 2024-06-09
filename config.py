@@ -24,3 +24,10 @@ discord_wh_url = ['DISCORD WEBHOOK URL1 HERE','DISCORD WEBHOOK URL2 HERE'] # You
 publish_pushover = False # Enable or disable notifications via Pushover
 pushover_token = "1234567890" # Your Pushover API token
 pushover_user = "abcdefghijklm" # Your Pushover user key
+
+# Matrix configuration
+publish_matrix = False # Enable or disable notifications via Matrix
+matrix_user = "botuser" # Your Matrix user
+matrix_password = "1234567890" # Your Matrix user's password
+matrix_server = "https://matrix.example.com" # Your Matrix user's server
+matrix_room = "#theroom:matrix.example.com" # The Matrix room your bot should join
