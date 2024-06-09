@@ -104,14 +104,12 @@ You will need to open the config.py file in your favorite text/Python editor and
   - Enable/Disable Matrix Notifiations
     - Set True to Enable, False to Disable
 
-- matrix_user = "botuser"
-  - The user name of your Matrix user
-- matrix_password = "1234567890"
-  - The password of your Matrix user
+- matrix_token = "a1b2c3d4e5f6g7h8i9j0"
+  - The access token of your Matrix user
 - matrix_server = "https://matrix.example.com"
   - The server URL of the Matrix server
-- matrix_room = "theroom:matrix.example.com"
-  - The Matrix room your bot should join
+- matrix_room = "#crypticroomid:matrix.example.com"
+  - The Matrix room ID your bot should join (NOT the name but the ID)
 
 
 When editing the config file and copying in your keys, make sure to leave the single and double quotes around tokens, otherwise the program will not know how to handle the token keys.
@@ -170,7 +168,7 @@ Addtion of searching of Asterisk Database file for node information added by Sco
 
 Update to Telegram code moving from cURL to http.client and json payload added by Alex, GM5ALX
 
-Addition of Matrix notifications my Michael Clemens, DK1MI
+Addition of Matrix notifications my Michael Clemens, DK1MI and Alex, GM5ALX
 
 ---
 

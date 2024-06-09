@@ -27,7 +27,6 @@ pushover_user = "abcdefghijklm" # Your Pushover user key
 
 # Matrix configuration
 publish_matrix = False # Enable or disable notifications via Matrix
-matrix_user = "botuser" # Your Matrix user
-matrix_password = "1234567890" # Your Matrix user's password
+matrix_token = "a1b2c3d4e5f6g7h8i9j0" # The access token of the Matrix user
 matrix_server = "https://matrix.example.com" # Your Matrix user's server
-matrix_room = "#theroom:matrix.example.com" # The Matrix room your bot should join
+matrix_room = "#crypticroomid:matrix.example.com" # The Matrix room ID your bot should join. 
