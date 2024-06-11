@@ -8,7 +8,7 @@ Notification/Access Control script for Allstarlink Nodes
 
 ASL has a built in ability to run a script on the connection or disconnection of one node to another node. Many node owners use this functionality as a notification method to know when someone connects/disconnects to thier system. This is done via either email or text message, depending on how the owner has the script setup.
 
-This script will send a notification to Telegram, Discord or via Pushover when a node connects or disconnects from your Allstarlink System. It will also allow you to block any nodes you would like to keep them from being able to connect to any of your nodes on your system. This is an easier blacklist then what is built into Allstarlink itself.
+This script will send a notification to Telegram, Discord, Matrix or via Pushover when a node connects or disconnects from your Allstarlink System. It will also allow you to block any nodes you would like to keep them from being able to connect to any of your nodes on your system. This is an easier blacklist then what is built into Allstarlink itself.
 
 Since ASL only runs on Linux, the instructions here are based on that.
 
@@ -35,6 +35,10 @@ Next you will need to install the discord-webhook python library if it's not alr
 pip3 install discord-webhook --upgrade
 ```
 
+Next you will need to install the matrix-client python library if it's not already. This is for sending the notification to Matrix:
+```bash
+pip3 install matrix-client --upgrade
+```
 ---
 
 ### API Keys Needed
@@ -46,6 +50,8 @@ If you are going to use Telegram for your notifications, you will need to get AP
 If you are going to use Discord, you will need to setup a channel and then setup a webhook for that channel and then copy that webhook URL into the config file in the correct place.
 
 If you are going to use Pushover, you will need to get an API token and have your User Key available from your account.
+
+If you are going to use Matrix, you will need a Matrix user on any server.
 
 ---
 
@@ -93,6 +99,18 @@ You will need to open the config.py file in your favorite text/Python editor and
   - Your Pushover API token
 - pushover_user = "abcdefghijklm" 
   - Your Pushover user key
+
+- publish_matrix = False # Enable or disable notifications via Matrix
+  - Enable/Disable Matrix Notifiations
+    - Set True to Enable, False to Disable
+
+- matrix_token = "a1b2c3d4e5f6g7h8i9j0"
+  - The access token of your Matrix user
+- matrix_server = "https://matrix.example.com"
+  - The server URL of the Matrix server
+- matrix_room = "#crypticroomid:matrix.example.com"
+  - The Matrix room ID your bot should join (NOT the name but the ID)
+
 
 When editing the config file and copying in your keys, make sure to leave the single and double quotes around tokens, otherwise the program will not know how to handle the token keys.
 
@@ -144,11 +162,13 @@ Node 1999 connected to 12345
 ---
 ## Credits
 
-The idea for the Pushover Notifiations came from Michael Clemens, DL6MHC. I saw it in his [pyBMNotify Script](https://git.qrz.is/clemens/pyBMNotify) and used it here.
+The idea for the Pushover Notifiations came from Michael Clemens, DK1MI. I saw it in his [pyBMNotify Script](https://git.dk1mi.radio/mclemens/pyBMNotify) and used it here.
 
 Addtion of searching of Asterisk Database file for node information added by Scott, W8UFO
 
 Update to Telegram code moving from cURL to http.client and json payload added by Alex, GM5ALX
+
+Addition of Matrix notifications my Michael Clemens, DK1MI and Alex, GM5ALX
 
 ---
 

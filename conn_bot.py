@@ -7,6 +7,7 @@ import json
 import http.client, urllib
 from datetime import datetime, date, time, timedelta
 from discord_webhook import DiscordWebhook
+from matrix_client.api import MatrixHttpApi
 
 # Define Variables
 
@@ -18,6 +19,10 @@ db_deliminater = "|"
 node_info = ""
 
 def send(status):
+    if cfg.publish_matrix: # Send Matrix message
+        matrix = MatrixHttpApi(cfg.matrix_server, token=cfg.matrix_token)
+        response = matrix.send_message(cfg.matrix_room, status)
+
     if cfg.publish_telegram: # Send telegram message
         conn = http.client.HTTPSConnection("api.telegram.org")
         url = f"/bot{cfg.telegram_keys['apikey']}/sendMessage"
