@@ -30,14 +30,9 @@ Next you will need to install Python3 and pip3 on your system if they are not al
 sudo apt-get install python3 python3-pip
 ```
 
-Next you will need to install the discord-webhook python library if it's not already. This is for sending the notification to Discord:
+Next you will need to install the discord-webhook and matrix-client python library if it's not already. This is for sending the notification to Discord:
 ```bash
-pip3 install discord-webhook --upgrade
-```
-
-Next you will need to install the matrix-client python library if it's not already. This is for sending the notification to Matrix:
-```bash
-pip3 install matrix-client --upgrade
+pip3 install -r requirements.txt
 ```
 ---
 
@@ -184,6 +179,10 @@ If you reach out to me, please include what error you are getting and what you w
 ---
 
 ## Change Log
+
+06/11/2024
+* Merge Matrix notifications code from Michael, DK1MI and Alex, GM5ALX (PR#7)
+* Updated python library install from just a list of instructions on the README to a requirements file and updated README accordingly. - Jeff, N8ACL
 
 06/08/2024
 * Update to Telegram code moving from cURL to http.client and json payload - Alex, GM5ALX (PR #6)
